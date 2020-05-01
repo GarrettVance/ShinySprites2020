@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="TextureUtilities">
+      <UniqueIdentifier>{7397f78d-9f52-49fc-b669-1d36ada1f78e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{53360f17-ef11-4161-96b8-0e316de57d7b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureUtilities\TextureManager.h">
+      <Filter>TextureUtilities</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureUtilities\stb_image.h">
+      <Filter>TextureUtilities</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureUtilities\Texture.h">
+      <Filter>TextureUtilities</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureUtilities\MeshData.h">
+      <Filter>TextureUtilities</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureUtilities\UVSphere.h">
+      <Filter>TextureUtilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Imsai.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DevCamera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureUtilities\ResourceTextures.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Shaders\shader_sphere_fs.h">
+      <Filter>Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="Shaders\shader_sphere_vs.h">
+      <Filter>Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="Shaders\shader_skybox_fs.h">
+      <Filter>Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="Shaders\shader_skybox_vs.h">
+      <Filter>Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="Shaders\shader_sprite_occlusion_fs.h">
+      <Filter>Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="Shaders\shader_sprite_occlusion_vs.h">
+      <Filter>Shaders</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ShinySprites2020.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureUtilities\TextureManager.cpp">
+      <Filter>TextureUtilities</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureUtilities\Texture.cpp">
+      <Filter>TextureUtilities</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureUtilities\UVSphere.cpp">
+      <Filter>TextureUtilities</Filter>
+    </ClCompile>
+    <ClCompile Include="Imsai.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureUtilities\ResourceTextures.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ShinySprites2020.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="shine_2007_original.png" />
+    <Image Include="TextureUtilities\negative_x.png" />
+    <Image Include="TextureUtilities\negative_y.png" />
+    <Image Include="TextureUtilities\negative_z.png" />
+    <Image Include="TextureUtilities\positive_x.png" />
+    <Image Include="TextureUtilities\positive_y.png" />
+    <Image Include="TextureUtilities\positive_z.png" />
+  </ItemGroup>
+</Project>
