@@ -489,8 +489,6 @@ int main(int argc, char *argv[])
     glfwSetScrollCallback(theImsai->theGLFWwindow, scroll_callback);
 
 
-    //  Make application hard to use, except for easy 360-degree panning: 
-    glfwSetInputMode(theImsai->theGLFWwindow, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
 
     GLenum retvalGLEWInit = glewInit();

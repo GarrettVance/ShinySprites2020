@@ -140,13 +140,28 @@ const char* shader_sprite_occlusion_vs = R"glsl(
         return retval;
     }
 
-    void drawSprite(vec4 p_V_position, vec3 p_V_normal)
+
+    void main()
     {
-        vec4 Po = p_V_position;
-        vec4 Pw = m4_World * Po;
-        vec3 Nw = normalize((m4_WorldIT * vec4(p_V_normal,0)).xyz);
+        TexcoOriginal = attrTexco;   
+
+        vec4 Po = vec4(attrPos.xyz, 1.0); // object-space position;
+
+        vec4 Pw = m4_World * Po; // world-space position;
+
+
+        // Transform the object-space normals 
+        // into world-space normal 
+        // using the inverse-transpose-world matrix: 
+
+        vec3 Nw = normalize(
+            (
+                m4_WorldIT * vec4(attrNormal.xyz, 0)
+            ).xyz
+        );
+
         vec3 lightDir = normalize(unifLightPos - Pw.xyz);
-        vec3 eyeDir = normalize(unifEyePos - Pw.xyz);   // normalize(m4_ViewI[3] - Pw); // D3D order
+        vec3 eyeDir = normalize(unifEyePos - Pw.xyz); 
 
         //
         // get the second point
@@ -213,22 +228,13 @@ const char* shader_sprite_occlusion_vs = R"glsl(
         if(scale > minimumScale)
         {
             vec2 dir2d_NDC  = normalize(pos2d2_NDC.xy - pos2d1_NDC.xy);  
-            vec4 P11 = computeSpriteCorner(dir2d_NDC, projpos1_ClipSpace, scale, vec4(MinWidth, MaxWidth, MinHight, MaxHight)); 
-            gl_Position = P11; 
+            gl_Position = computeSpriteCorner(dir2d_NDC, projpos1_ClipSpace, scale, vec4(MinWidth, MaxWidth, MinHight, MaxHight)); 
         }
         else
         {
             gl_Position = vec4(0.0, 0.0, 0.0, 0.0);
         }
     }
-
-
-    void main()
-    {
-        vec4 Po = vec4(attrPos.xyz, 1.0); // object-space position;
-        drawSprite(Po, attrNormal.xyz); 
-        TexcoOriginal = attrTexco;   
-    }  
 )glsl";
 
 
